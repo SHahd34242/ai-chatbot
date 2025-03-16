@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbot</title>
+</head>
+<body>
+    <h1>AI Chatbot</h1>
+    <div id="chat-container">
+        <div id="chat-box"></div>
+        <input type="text" id="user-input" placeholder="Type a message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+    <script>
+        function sendMessage() {
+            const userInput = document.getElementById("user-input").value;
+            const chatBox = document.getElementById("chat-box");
+            
+            const userMessage = document.createElement("p");
+            userMessage.textContent = "You: " + userInput;
+            chatBox.appendChild(userMessage);
+
+            const botMessage = document.createElement("p");
+            botMessage.textContent = "Bot: " + "Your message was: " + userInput;
+            chatBox.appendChild(botMessage);
+
+            document.getElementById("user-input").value = "";
+        }
+    </script>
+</body>
+</html>
